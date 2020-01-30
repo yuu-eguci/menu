@@ -20,7 +20,7 @@ class app_menu(tk.Frame):
     def create_widgets(self):
         tk.Label(self, text='今日のめにゅーは何かな？').pack()
         tk.Button(self, text='Click me', command=self.decide_menu).pack()
-        
+
         # labelのデフォの設定。
         # tk.StringVarはメモ帳だから、全部用意しないとだめ？
         self.menutext_1 = tk.StringVar()
@@ -36,7 +36,7 @@ class app_menu(tk.Frame):
         tk.Label(self, textvariable=self.menutext_2).pack()
         tk.Label(self, textvariable=self.menutext_3).pack()
         tk.Label(self, textvariable=self.menutext_4).pack()
-        
+
     def decide_menu(self):
         self.num = rd.randint(0, len(self.menulist)-1)
         if len(self.menulist[self.num]) == 3:
@@ -48,7 +48,7 @@ class app_menu(tk.Frame):
             self.menutext_1.set(self.menulist[self.num][0])
             self.menutext_2.set(self.menulist[self.num][1])
             self.menutext_3.set('なし！')
-            self.menutext_4.set('')            
+            self.menutext_4.set('')
         elif len(self.menulist[self.num]) == 1:
             self.menutext_1.set(self.menulist[self.num][0])
             self.menutext_2.set('なし！')
