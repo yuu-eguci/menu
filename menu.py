@@ -39,17 +39,18 @@ class app_menu(tk.Frame):
 
     def decide_menu(self):
         num = rd.randint(0, len(self.menulist)-1)
-        if len(self.menulist[num]) == 3:
+        menulist_len = len(self.menulist[num])
+        if menulist_len == 3:
             self.menutext_1.set(self.menulist[num][0])
             self.menutext_2.set(self.menulist[num][1])
             self.menutext_3.set(self.menulist[num][2])
             self.menutext_4.set('')
-        elif len(self.menulist[num]) == 2:
+        elif menulist_len == 2:
             self.menutext_1.set(self.menulist[num][0])
             self.menutext_2.set(self.menulist[num][1])
             self.menutext_3.set('なし！')
             self.menutext_4.set('')
-        elif len(self.menulist[num]) == 1:
+        elif menulist_len == 1:
             self.menutext_1.set(self.menulist[num][0])
             self.menutext_2.set('なし！')
             self.menutext_3.set('なし！')
