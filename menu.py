@@ -10,7 +10,7 @@ class app_menu(tk.Frame):
         # master=Noneにすると、全体が親ウィジェットのことになる。
         super().__init__(master)
         self.pack()
-        self.master.title('Today\'s Menu')
+        self.master.title("Today's Menu")
         self.master.geometry('500x500')
 
         self.menuinput()
