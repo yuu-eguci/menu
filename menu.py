@@ -23,6 +23,7 @@ class app_menu(tk.Frame):
 
         # labelのデフォの設定。
         # tk.StringVarはメモ帳だから、全部用意しないとだめ？
+        # HACK: ↑用意しないとだめ。 for を使って行数を減らすことはできると思います。
         self.menutext_1 = tk.StringVar()
         self.menutext_1.set('メイン')
         self.menutext_2 = tk.StringVar()
@@ -40,6 +41,8 @@ class app_menu(tk.Frame):
     def decide_menu(self):
         num = rd.randint(0, len(self.menulist)-1)
         menulist_len = len(self.menulist[num])
+
+        # HACK: menulist を「デフォルトでは"なし!"か""」を返す、っていう風に作ればとても短くなるかも。
         if menulist_len == 3:
             self.menutext_1.set(self.menulist[num][0])
             self.menutext_2.set(self.menulist[num][1])
