@@ -13,7 +13,7 @@ class app_menu(tk.Frame):
         self.master.title("Today's Menu")
         self.master.geometry('500x500')
 
-        self.menuinput()
+        self.create_menu_list()
         self.create_widgets()
 
     # ウィジェットを作っていくよ。
@@ -65,7 +65,7 @@ class app_menu(tk.Frame):
             self.menutext_4.set('そんなに作れないからだめ！')
 
     # csvファイル読み込んでリストにするよ。
-    def menuinput(self):
+    def create_menu_list(self):
         with open('menu.csv', encoding='utf-8') as f:
             self.menulist = list(csv.reader(f))
 
